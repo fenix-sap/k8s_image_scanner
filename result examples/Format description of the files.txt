@@ -1,0 +1,24 @@
+This folder is uesed to show the result files and the medium files. 
+
+There are 3 kinds of the json file in this program, first is "images.json", this is used to save all the images name in each namespace. the structure of this file is like this:
+[{'namespace',
+'status',
+'Images'[
+    'Continer_IP',
+    'Pod_name',
+    'Image',   
+    'ImageId' ]},{...},{...}....] 
+
+The second type json file is used to save the origional trivy scan results, so the structure is determined by trivy. The name of the files are the name of the images with "_" replaced "\" and "-" replaced ":" 
+
+The last kind json files are the analysis of the scan result files, the name of those files are the name of the related "scan result files' name" + "-vulresult"+".json",  and the final structure is like this:
+{
+'ImageName',
+'Image Id',
+'Vulnerabilities':[{
+    'VulnerabilityID',
+    'PkgName',
+    'Severity',
+    'V3Score'
+    },{}],{''},{''}....]
+}

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-quary
+spec:
+  selector:
+    matchLabels:
+      app: azure-quary
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: azure-quary
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: azure-host  
+        image: fenix8sap/k8squary:version4
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 8080    
+      imagePullSecrets:
+      - name: regsecret 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-quary
+spec:
+  selector:
+    app: azure-quary
+    release: stabel
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+#     nodePort: 30088
+  type: ClusterIP

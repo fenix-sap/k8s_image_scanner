@@ -1,0 +1,858 @@
+[
+  {
+    "Target": "fenix8sap/k8squary:version2 (debian 10.4)",
+    "Type": "debian",
+    "Vulnerabilities": [
+      {
+        "VulnerabilityID": "CVE-2020-10878",
+        "PkgName": "libperl5.28",
+        "InstalledVersion": "5.28.1-6",
+        "FixedVersion": "5.28.1-6+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:46a297e68c473255e515971ffcb2dc78f724e60214df479a66bb9b04892afc1b"
+        },
+        "SeveritySource": "nvd",
+        "Title": "perl: corruption of intermediate language state of compiled regular expression due to integer overflow leads to DoS",
+        "Description": "Perl before 5.30.3 has an integer overflow related to mishandling of a \"PL_regkind[OP(n)] == NOTHING\" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-190"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "V2Score": 7.5,
+            "V3Score": 8.6
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "V3Score": 8.6
+          }
+        },
+        "References": [
+          "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00044.html",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10878",
+          "https://github.com/Perl/perl5/blob/blead/pod/perl5303delta.pod",
+          "https://github.com/Perl/perl5/compare/v5.30.2...v5.30.3",
+          "https://github.com/perl/perl5/commit/0a320d753fe7fca03df259a4dfd8e641e51edaa8",
+          "https://github.com/perl/perl5/commit/3295b48defa0f8570114877b063fe546dd348b3c",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IN3TTBO5KSGWE5IRIKDJ5JSQRH7ANNXE/",
+          "https://metacpan.org/pod/release/XSAWYERX/perl-5.28.3/pod/perldelta.pod",
+          "https://metacpan.org/pod/release/XSAWYERX/perl-5.30.3/pod/perldelta.pod",
+          "https://security.gentoo.org/glsa/202006-03",
+          "https://security.netapp.com/advisory/ntap-20200611-0001/"
+        ],
+        "PublishedDate": "2020-06-05T14:15:00Z",
+        "LastModifiedDate": "2020-06-23T02:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2013-7445",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: memory exhaustion via crafted Graphics Execution Manager (GEM) objects",
+        "Description": "The Direct Rendering Manager (DRM) subsystem in the Linux kernel through 4.x mishandles requests for Graphics Execution Manager (GEM) objects, which allows context-dependent attackers to cause a denial of service (memory consumption) via an application that processes graphics data, as demonstrated by JavaScript code that creates many CANVAS elements for rendering by Chrome or Firefox.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-399"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+          },
+          "redhat": {
+            "v2": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+            "V2Score": 7.8
+          },
+          "redhat": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+            "V2Score": 4.3
+          }
+        },
+        "References": [
+          "https://bugzilla.kernel.org/show_bug.cgi?id=60533",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7445",
+          "https://lists.freedesktop.org/archives/dri-devel/2015-September/089778.html (potential start towards fixing)"
+        ],
+        "PublishedDate": "2015-10-16T01:59:00Z",
+        "LastModifiedDate": "2015-10-16T16:22:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-0145",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.146-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Description": "Buffer overflow in i40e driver for Intel(R) Ethernet 700 Series Controllers versions before 7.0 may allow an authenticated user to potentially enable an escalation of privilege via local access.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-120"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.2,
+            "V3Score": 7.8
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0145",
+          "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00255.html"
+        ],
+        "PublishedDate": "2019-11-14T19:15:00Z",
+        "LastModifiedDate": "2019-11-19T15:42:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-15794",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: Overlayfs in the Linux kernel and shiftfs  not restoring original value on error leading to a refcount underflow",
+        "Description": "Overlayfs in the Linux kernel and shiftfs, a non-upstream patch to the Linux kernel included in the Ubuntu 5.0 and 5.3 kernel series, both replace vma-\u003evm_file in their mmap handlers. On error the original value is not restored, and the reference is put for the file to which vm_file points. On upstream kernels this is not an issue, as no callers dereference vm_file following after call_mmap() returns an error. However, the aufs patchs change mmap_region() to replace the fput() using a local variable with vma_fput(), which will fput() vm_file, leading to a refcount underflow.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-672"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.2,
+            "V3Score": 6.7
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 6.7
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-15794",
+          "https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/eoan/commit/?id=270d16ae48a4dbf1c7e25e94cc3e38b4bea37635",
+          "https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/eoan/commit/?id=ef81780548d20a786cc77ed4203fca146fd81ce3",
+          "https://usn.ubuntu.com/usn/usn-4208-1",
+          "https://usn.ubuntu.com/usn/usn-4209-1"
+        ],
+        "PublishedDate": "2020-04-24T00:15:00Z",
+        "LastModifiedDate": "2020-05-26T15:18:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-18814",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.131-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: use-after-free in aa_audit_rule_init() in security/apparmor/audit.c",
+        "Description": "An issue was discovered in the Linux kernel through 5.3.9. There is a use-after-free when aa_label_parse() fails in aa_audit_rule_init() in security/apparmor/audit.c.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-416"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.5,
+            "V3Score": 9.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 7.8
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18814",
+          "https://lists.debian.org/debian-lts-announce/2020/08/msg00019.html",
+          "https://lore.kernel.org/patchwork/patch/1142523/",
+          "https://security.netapp.com/advisory/ntap-20191205-0001/",
+          "https://support.f5.com/csp/article/K21561554?utm_source=f5support\u0026amp;utm_medium=RSS"
+        ],
+        "PublishedDate": "2019-11-07T16:15:00Z",
+        "LastModifiedDate": "2020-08-12T19:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-19074",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.146-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: a memory leak in the ath9k management function in allows local DoS",
+        "Description": "A memory leak in the ath9k_wmi_cmd() function in drivers/net/wireless/ath/ath9k/wmi.c in the Linux kernel through 5.3.11 allows attackers to cause a denial of service (memory consumption), aka CID-728c1e2a05e4.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-401"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V2Score": 7.8,
+            "V3Score": 7.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V3Score": 7.5
+          }
+        },
+        "References": [
+          "http://linux.oracle.com/cve/CVE-2019-19074.html",
+          "http://linux.oracle.com/errata/ELSA-2020-5845.html",
+          "http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00029.html",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19074",
+          "https://github.com/torvalds/linux/commit/728c1e2a05e4b5fc52fab3421dce772a806612a2",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/O3PSDE6PTOTVBK2YTKB2TFQP2SUBVSNF/",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PY7LJMSPAGRIKABJPDKQDTXYW3L5RX2T/",
+          "https://security.netapp.com/advisory/ntap-20191205-0001/",
+          "https://usn.ubuntu.com/4526-1/",
+          "https://usn.ubuntu.com/4527-1/",
+          "https://usn.ubuntu.com/usn/usn-4526-1",
+          "https://usn.ubuntu.com/usn/usn-4527-1"
+        ],
+        "PublishedDate": "2019-11-18T06:15:00Z",
+        "LastModifiedDate": "2020-09-25T18:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-19813",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.146-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: use-after-free in __mutex_lock in kernel/locking/mutex.c",
+        "Description": "In the Linux kernel 5.0.21, mounting a crafted btrfs filesystem image, performing some operations, and then making a syncfs system call can lead to a use-after-free in __mutex_lock in kernel/locking/mutex.c. This is related to mutex_can_spin_on_owner in kernel/locking/mutex.c, __btrfs_qgroup_free_meta in fs/btrfs/qgroup.c, and btrfs_insert_delayed_items in fs/btrfs/delayed-inode.c.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-416"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "V2Score": 7.1,
+            "V3Score": 5.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "V3Score": 5.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19813",
+          "https://github.com/bobfuzzer/CVE/tree/master/CVE-2019-19813",
+          "https://lists.debian.org/debian-lts-announce/2020/09/msg00025.html",
+          "https://security.netapp.com/advisory/ntap-20200103-0001/",
+          "https://usn.ubuntu.com/4414-1/",
+          "https://usn.ubuntu.com/usn/usn-4414-1"
+        ],
+        "PublishedDate": "2019-12-17T06:15:00Z",
+        "LastModifiedDate": "2020-09-28T16:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-19814",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: out-of-bounds write in __remove_dirty_segment in fs/f2fs/segment.c",
+        "Description": "In the Linux kernel 5.0.21, mounting a crafted f2fs filesystem image can cause __remove_dirty_segment slab-out-of-bounds write access because an array is bounded by the number of dirty types (8) but the array index can exceed this.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-787"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "V2Score": 9.3,
+            "V3Score": 7.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:H",
+            "V3Score": 7.3
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19814",
+          "https://github.com/bobfuzzer/CVE/tree/master/CVE-2019-19814",
+          "https://security.netapp.com/advisory/ntap-20200103-0001/"
+        ],
+        "PublishedDate": "2019-12-17T06:15:00Z",
+        "LastModifiedDate": "2020-01-03T11:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-19815",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: NULL pointer dereference in f2fs_recover_fsync_data in fs/f2fs/recovery.c",
+        "Description": "In the Linux kernel 5.0.21, mounting a crafted f2fs filesystem image can cause a NULL pointer dereference in f2fs_recover_fsync_data in fs/f2fs/recovery.c. This is related to F2FS_P_SB in fs/f2fs/f2fs.h.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-476"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "V2Score": 7.1,
+            "V3Score": 5.5
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "V3Score": 5.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19815",
+          "https://github.com/bobfuzzer/CVE/tree/master/CVE-2019-19815",
+          "https://github.com/torvalds/linux/commit/4969c06a0d83c9c3dc50b8efcdc8eeedfce896f6#diff-41a7fa4590d2af87e82101f2b4dadb56",
+          "https://security.netapp.com/advisory/ntap-20200103-0001/"
+        ],
+        "PublishedDate": "2019-12-17T07:15:00Z",
+        "LastModifiedDate": "2020-01-03T11:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2019-19816",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.146-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: out-of-bounds write in __btrfs_map_block in fs/btrfs/volumes.c",
+        "Description": "In the Linux kernel 5.0.21, mounting a crafted btrfs filesystem image and performing some operations can cause slab-out-of-bounds write access in __btrfs_map_block in fs/btrfs/volumes.c, because a value of 1 for the number of data stripes is mishandled.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-787"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "V2Score": 9.3,
+            "V3Score": 7.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "V3Score": 7.8
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19816",
+          "https://github.com/bobfuzzer/CVE/tree/master/CVE-2019-19816",
+          "https://lists.debian.org/debian-lts-announce/2020/09/msg00025.html",
+          "https://security.netapp.com/advisory/ntap-20200103-0001/",
+          "https://usn.ubuntu.com/4414-1/",
+          "https://usn.ubuntu.com/usn/usn-4414-1"
+        ],
+        "PublishedDate": "2019-12-17T06:15:00Z",
+        "LastModifiedDate": "2020-09-28T16:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-13974",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.131-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Description": "** DISPUTED ** An issue was discovered in the Linux kernel through 5.7.1. drivers/tty/vt/keyboard.c has an integer overflow if k_ascii is called several times in a row, aka CID-b86dab054059. NOTE: Members in the community argue that the integer overflow does not lead to a security issue in this case.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-190"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.2,
+            "V3Score": 7.8
+          }
+        },
+        "References": [
+          "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00008.html",
+          "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00009.html",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-13974",
+          "https://git.kernel.org/linus/b86dab054059b970111b5516ae548efaae5b3aae",
+          "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b86dab054059b970111b5516ae548efaae5b3aae",
+          "https://lists.debian.org/debian-lts-announce/2020/08/msg00019.html",
+          "https://lkml.org/lkml/2020/3/22/482",
+          "https://lore.kernel.org/lkml/CAEAjams79+V8bxpcp3UAsU1AnJ+gx2y+ZqhDhjJCpZn2oeZA4Q@mail.gmail.com/",
+          "https://usn.ubuntu.com/4427-1/",
+          "https://usn.ubuntu.com/4439-1/",
+          "https://usn.ubuntu.com/4440-1/",
+          "https://usn.ubuntu.com/4483-1/",
+          "https://usn.ubuntu.com/4485-1/",
+          "https://usn.ubuntu.com/usn/usn-4427-1",
+          "https://usn.ubuntu.com/usn/usn-4439-1",
+          "https://usn.ubuntu.com/usn/usn-4440-1",
+          "https://usn.ubuntu.com/usn/usn-4483-1",
+          "https://usn.ubuntu.com/usn/usn-4485-1"
+        ],
+        "PublishedDate": "2020-06-09T05:15:00Z",
+        "LastModifiedDate": "2020-09-15T18:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-14356",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.146-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: Use After Free vulnerability in cgroup BPF component",
+        "Description": "A flaw null pointer dereference in the Linux kernel cgroupv2 subsystem in versions before 5.7.10 was found in the way when reboot the system. A local user could use this flaw to crash the system or escalate their privileges on the system.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-476"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.2,
+            "V3Score": 7.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 7.8
+          }
+        },
+        "References": [
+          "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00047.html",
+          "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00007.html",
+          "https://bugzilla.kernel.org/show_bug.cgi?id=208003",
+          "https://bugzilla.redhat.com/show_bug.cgi?id=1868453",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14356",
+          "https://lists.debian.org/debian-lts-announce/2020/09/msg00025.html",
+          "https://lore.kernel.org/netdev/CAM_iQpUKQJrj8wE+Qa8NGR3P0L+5Uz=qo-O5+k_P60HzTde6aw%40mail.gmail.com/t/",
+          "https://security.netapp.com/advisory/ntap-20200904-0002/",
+          "https://usn.ubuntu.com/4483-1/",
+          "https://usn.ubuntu.com/4484-1/",
+          "https://usn.ubuntu.com/4526-1/",
+          "https://usn.ubuntu.com/usn/usn-4483-1",
+          "https://usn.ubuntu.com/usn/usn-4484-1",
+          "https://usn.ubuntu.com/usn/usn-4526-1"
+        ],
+        "PublishedDate": "2020-08-19T15:15:00Z",
+        "LastModifiedDate": "2020-09-28T16:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-14386",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.146-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: memory corruption in net/packet/af_packet.c leads to elevation of privilege",
+        "Description": "A flaw was found in the Linux kernel before 5.9-rc4. Memory corruption can be exploited to gain root privileges from unprivileged processes. The highest threat from this vulnerability is to data confidentiality and integrity.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-787"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.2,
+            "V3Score": 7.8
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 7.8
+          }
+        },
+        "References": [
+          "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-14386",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14386",
+          "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=acf69c946233259ab4d64f8869d4037a198c7f06",
+          "https://lists.debian.org/debian-lts-announce/2020/09/msg00025.html",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RNCPXERMUHPSGF6S2VVFL5NVVPBBFB63/",
+          "https://lore.kernel.org/netdev/20200904040528.3635711-1-edumazet@google.com/T/#u",
+          "https://lore.kernel.org/netdev/20200904133052.20299-1-snu@amazon.com/",
+          "https://seclists.org/oss-sec/2020/q3/146",
+          "https://usn.ubuntu.com/usn/usn-4489-1",
+          "https://www.openwall.com/lists/oss-security/2020/09/03/3",
+          "https://www.openwall.com/lists/oss-security/2020/09/04/2"
+        ],
+        "PublishedDate": "2020-09-16T13:15:00Z",
+        "LastModifiedDate": "2020-09-28T16:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-15780",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "FixedVersion": "4.19.146-1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "SeveritySource": "nvd",
+        "Title": "kernel: lockdown: bypass through ACPI write via acpi_configfs",
+        "Description": "An issue was discovered in drivers/acpi/acpi_configfs.c in the Linux kernel before 5.7.7. Injection of malicious ACPI tables via configfs could be used by attackers to bypass lockdown and secure boot restrictions, aka CID-75b0cea7bf30.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-863"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "v3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "V2Score": 7.2,
+            "V3Score": 6.7
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "V3Score": 6.4
+          }
+        },
+        "References": [
+          "http://linux.oracle.com/cve/CVE-2020-15780.html",
+          "http://linux.oracle.com/errata/ELSA-2020-5792.html",
+          "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00009.html",
+          "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00047.html",
+          "http://www.openwall.com/lists/oss-security/2020/07/20/7",
+          "http://www.openwall.com/lists/oss-security/2020/07/29/3",
+          "http://www.openwall.com/lists/oss-security/2020/07/30/2",
+          "http://www.openwall.com/lists/oss-security/2020/07/30/3",
+          "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.7.7",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15780",
+          "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=75b0cea7bf307f362057cc778efe89af4c615354",
+          "https://git.zx2c4.com/american-unsigned-language/tree/american-unsigned-language-2.sh",
+          "https://usn.ubuntu.com/4425-1/",
+          "https://usn.ubuntu.com/4426-1/",
+          "https://usn.ubuntu.com/4439-1/",
+          "https://usn.ubuntu.com/4440-1/",
+          "https://usn.ubuntu.com/usn/usn-4425-1",
+          "https://usn.ubuntu.com/usn/usn-4426-1",
+          "https://usn.ubuntu.com/usn/usn-4439-1",
+          "https://usn.ubuntu.com/usn/usn-4440-1",
+          "https://www.openwall.com/lists/oss-security/2020/06/15/3"
+        ],
+        "PublishedDate": "2020-07-15T22:15:00Z",
+        "LastModifiedDate": "2020-08-21T06:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-25645",
+        "PkgName": "linux-libc-dev",
+        "InstalledVersion": "4.19.118-2+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:cfb4ccdac2588557024f7741ba447707fc26304e7d84cf53d481671cb4a23f1c"
+        },
+        "Title": "kernel: Geneve/IPsec traffic may be unencrypted between two Geneve endpoints",
+        "Description": "A flaw was found in the Linux kernel. Traffic between two Geneve endpoints may be unencrypted when IPsec is configured to encrypt traffic for the specific UDP port used by the GENEVE tunnel allowing anyone in between the two endpoints to read the traffic unencrypted. The main threat from this vulnerability is to data confidentiality.",
+        "Severity": "HIGH",
+        "VendorVectors": {
+          "redhat": {
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          }
+        },
+        "CVSS": {
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "V3Score": 7.5
+          }
+        }
+      },
+      {
+        "VulnerabilityID": "CVE-2020-10878",
+        "PkgName": "perl",
+        "InstalledVersion": "5.28.1-6",
+        "FixedVersion": "5.28.1-6+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:46a297e68c473255e515971ffcb2dc78f724e60214df479a66bb9b04892afc1b"
+        },
+        "SeveritySource": "nvd",
+        "Title": "perl: corruption of intermediate language state of compiled regular expression due to integer overflow leads to DoS",
+        "Description": "Perl before 5.30.3 has an integer overflow related to mishandling of a \"PL_regkind[OP(n)] == NOTHING\" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-190"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "V2Score": 7.5,
+            "V3Score": 8.6
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "V3Score": 8.6
+          }
+        },
+        "References": [
+          "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00044.html",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10878",
+          "https://github.com/Perl/perl5/blob/blead/pod/perl5303delta.pod",
+          "https://github.com/Perl/perl5/compare/v5.30.2...v5.30.3",
+          "https://github.com/perl/perl5/commit/0a320d753fe7fca03df259a4dfd8e641e51edaa8",
+          "https://github.com/perl/perl5/commit/3295b48defa0f8570114877b063fe546dd348b3c",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IN3TTBO5KSGWE5IRIKDJ5JSQRH7ANNXE/",
+          "https://metacpan.org/pod/release/XSAWYERX/perl-5.28.3/pod/perldelta.pod",
+          "https://metacpan.org/pod/release/XSAWYERX/perl-5.30.3/pod/perldelta.pod",
+          "https://security.gentoo.org/glsa/202006-03",
+          "https://security.netapp.com/advisory/ntap-20200611-0001/"
+        ],
+        "PublishedDate": "2020-06-05T14:15:00Z",
+        "LastModifiedDate": "2020-06-23T02:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-10878",
+        "PkgName": "perl-base",
+        "InstalledVersion": "5.28.1-6",
+        "FixedVersion": "5.28.1-6+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:6086e1b289d997dfd19df1ec9366541c49f5545520f9dc65ebd4cd64071497b4"
+        },
+        "SeveritySource": "nvd",
+        "Title": "perl: corruption of intermediate language state of compiled regular expression due to integer overflow leads to DoS",
+        "Description": "Perl before 5.30.3 has an integer overflow related to mishandling of a \"PL_regkind[OP(n)] == NOTHING\" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-190"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "V2Score": 7.5,
+            "V3Score": 8.6
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "V3Score": 8.6
+          }
+        },
+        "References": [
+          "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00044.html",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10878",
+          "https://github.com/Perl/perl5/blob/blead/pod/perl5303delta.pod",
+          "https://github.com/Perl/perl5/compare/v5.30.2...v5.30.3",
+          "https://github.com/perl/perl5/commit/0a320d753fe7fca03df259a4dfd8e641e51edaa8",
+          "https://github.com/perl/perl5/commit/3295b48defa0f8570114877b063fe546dd348b3c",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IN3TTBO5KSGWE5IRIKDJ5JSQRH7ANNXE/",
+          "https://metacpan.org/pod/release/XSAWYERX/perl-5.28.3/pod/perldelta.pod",
+          "https://metacpan.org/pod/release/XSAWYERX/perl-5.30.3/pod/perldelta.pod",
+          "https://security.gentoo.org/glsa/202006-03",
+          "https://security.netapp.com/advisory/ntap-20200611-0001/"
+        ],
+        "PublishedDate": "2020-06-05T14:15:00Z",
+        "LastModifiedDate": "2020-06-23T02:15:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2020-10878",
+        "PkgName": "perl-modules-5.28",
+        "InstalledVersion": "5.28.1-6",
+        "FixedVersion": "5.28.1-6+deb10u1",
+        "Layer": {
+          "DiffID": "sha256:46a297e68c473255e515971ffcb2dc78f724e60214df479a66bb9b04892afc1b"
+        },
+        "SeveritySource": "nvd",
+        "Title": "perl: corruption of intermediate language state of compiled regular expression due to integer overflow leads to DoS",
+        "Description": "Perl before 5.30.3 has an integer overflow related to mishandling of a \"PL_regkind[OP(n)] == NOTHING\" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-190"
+        ],
+        "VendorVectors": {
+          "nvd": {
+            "v2": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          },
+          "redhat": {
+            "v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          }
+        },
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "V2Score": 7.5,
+            "V3Score": 8.6
+          },
+          "redhat": {
+            "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "V3Score": 8.6
+          }
+        },
+        "References": [
+          "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00044.html",
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10878",
+          "https://github.com/Perl/perl5/blob/blead/pod/perl5303delta.pod",
+          "https://github.com/Perl/perl5/compare/v5.30.2...v5.30.3",
+          "https://github.com/perl/perl5/commit/0a320d753fe7fca03df259a4dfd8e641e51edaa8",
+          "https://github.com/perl/perl5/commit/3295b48defa0f8570114877b063fe546dd348b3c",
+          "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IN3TTBO5KSGWE5IRIKDJ5JSQRH7ANNXE/",
+          "https://metacpan.org/pod/release/XSAWYERX/perl-5.28.3/pod/perldelta.pod",
+          "https://metacpan.org/pod/release/XSAWYERX/perl-5.30.3/pod/perldelta.pod",
+          "https://security.gentoo.org/glsa/202006-03",
+          "https://security.netapp.com/advisory/ntap-20200611-0001/"
+        ],
+        "PublishedDate": "2020-06-05T14:15:00Z",
+        "LastModifiedDate": "2020-06-23T02:15:00Z"
+      }
+    ]
+  }
+]

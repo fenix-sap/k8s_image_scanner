@@ -1,0 +1,12 @@
+About how to prepare the environment for the this program:
+1. Python 3 with kubeneters client model installed.
+	Run commend:  "pip3 install kubernetes" to install 
+2. Docker
+3. Trivy: 	
+	Refer to this page: https://github.com/aquasecurity/trivy#debianubuntu
+4. Yaml files introduction
+	1) k8squary.yaml:    This is used to create a cluster for debug. 
+	2) role_service_account.yaml:  Add role and the permision to the role and the RoleBinding 
+	3) cluster_view.yaml: Add ClusterRoleBinding then, this user can get cluster level informaiton.
+
+5. 
