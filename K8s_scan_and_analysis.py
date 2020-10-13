@@ -73,42 +73,40 @@ def get_images_name(logger, outfile):
     except:
         apisvr_port = None
 
-    if apisvr_port == None or apisvr_add == None :
-        logger.critical("critical: Cannot get api server address or api server port, will use the defaul to have a try. ")
-        os.environ.setdefault('KUBERNETES_SERVICE_PORT', '443')
-        os.environ.setdefault('KUBERNETES_SERVICE_HOST', '10.0.0.1')
-        apisvr_add  = os.environ['KUBERNETES_SERVICE_HOST']
-        apisvr_port = os.environ['KUBERNETES_SERVICE_PORT']
+    if apisvr_port != None and apisvr_add != None :
+        logger.info("Info: Running in local mode. ")
+        #os.environ.setdefault('KUBERNETES_SERVICE_PORT', '443')
+        #os.environ.setdefault('KUBERNETES_SERVICE_HOST', '10.0.0.1')
+        #apisvr_add  = os.environ['KUBERNETES_SERVICE_HOST']
+        #apisvr_port = os.environ['KUBERNETES_SERVICE_PORT']
+        #get token // for debug
 
-    #get token // for debug
-    if True == os.path.isfile("/var/run/secrets/kubernetes.io/serviceaccount/token"):
-        with open("/var/run/secrets/kubernetes.io/serviceaccount/token") as fil_obj:
-            token = fil_obj.read()
+        with open("token.txt",'r') as fil_obj:
+            token = fil_obj.read().strip('\n')
+        
+        #create a https connection to API server
+        api_rul = 'https://{}:{}'.format(apisvr_add, apisvr_port)
+        configuration = client.Configuration()
+        configuration.host = api_rul
+        configuration.verify_ssl = False
+        configuration.api_key = {"authorization": "Bearer " + token}
+        # configuration.ssl_ca_cert = 'ca.crt'
+        client.Configuration.set_default(configuration)
     else:
-        #for debug
-        print("error")    
-        logger.critical("Token file read error")
-
-    if True == os.path.isfile("/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"):
-        with open("/var/run/secrets/kubernetes.io/serviceaccount/token") as fil_obj:
-            cert = fil_obj.read()
-    else:
-        #for debug
-        print("error")    
-        logger.critical("Cert file read error")
-
-
-    #create a https connection to API server
-    api_rul = 'https://{}:{}'.format(apisvr_add, apisvr_port)
-
-    configuration = client.Configuration()
-
-    config.load_incluster_config()
-    config.host = api_rul
-
+        logger.info("Info: API server IP address or port not set, will running in POD mode. ")
+        try:
+            config.load_incluster_config()
+        except:
+            logger.critical("Can't connect API server......")
+   
     # must run those three files at first: cluster_view.yaml   k8squary.yaml role_service_account.yaml
-    v1 = client.CoreV1Api()
-    ret = v1.list_namespace()
+    try:
+        v1 = client.CoreV1Api()
+        ret = v1.list_namespace()
+    except: 
+        logger.critical("client.CoreV1Api return fail ")
+        return False
+
     pos = 0
     #save the name, pod and image information to a json file
     for i in ret.items:
@@ -140,7 +138,7 @@ def get_images_name(logger, outfile):
         continue
     #save to json file
     json.dump(img_data, outfile)
-    return 
+    return True
 
 #############################################################################
 # function name: check_whether_new_images_appeared
@@ -256,7 +254,7 @@ def analysis_scanresult(scanresultfilelist, newimagelist):
         resultfilelst = filepath.rsplit(".", 1)
         resultfile = resultfilelst[0]+"-vulresult"+".json"
         print(resultfile)
-        with open(resultfile,'w') as outfile:
+        with open(resultfile,'wb') as outfile:
             json.dump(res_data, outfile)
         outfile.close()
         res_data.clear()
@@ -286,11 +284,17 @@ newimagelist = [] #A list for storing newly appeared images, those images will b
 
 while flag:
     loop_around += 1
-    #Open a new file for storing the images
-    with open('images.json','r+') as outfile:
-        get_images_name(logger,outfile) 
+    strtime = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()))
+    logger.info( "%s, This is the %dth times weak up", strtime,(loop_around))
+    
+    with open('images.json','wb') as outfile:
+        rslt =  get_images_name(logger,outfile) 
         #outfile.flush()
+    if rslt == True: 
         images_dict = json.load(outfile)
+    else: 
+        time.sleep(3600)
+        continue
    
     #Analysis the iamges list to get the newly appeared 
     check_whether_new_images_appeared(images_dict,images_list,newimagelist)
