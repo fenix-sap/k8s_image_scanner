@@ -3,10 +3,10 @@ Project introduction:
     This program will sleep and wake up automatically one times/hour and check if there are any new images added to this cluster, if any new images found, this tool will call trivy to scan that new added images and output the vulnerabilities which severity are over “high”.    
 
 How to run this program:
-1.	Local model:
-This tool can run locally on your Linux server or windows laptop by call “ Python 3 k8s_scan_and_analysis.py”, in this model,  please set the API server’s  external IP address and Port to environment variables “KUBERNETES_SERVICE_HOST” and “KUBERNETES_SERVICE_PORT”.   And  you need to point out the valid token file to access the cluster API server. 
-2.	Pod model:
-In this model, this tool is running in a pod in the cluster, tool will call “load_incluster_config()” to connect to the API server, no token is needed,  by here you need to install the trivy in the pod and it be better in a persistence storage. 
+1.	Local mode:
+This tool can run locally on your Linux server or windows laptop by call "Python 3 k8s_scan_and_analysis.py", in this model,  please set the API server's  external IP address and Port to environment variables "KUBERNETES_SERVICE_HOST" and "KUBERNETES_SERVICE_PORT".   And  you need to point out the valid token file to access the cluster API server. 
+2.	Pod mode:
+In this model, this tool is running in a pod in the cluster, tool will call "load_incluster_config()" to connect to the API server, no token is needed,  by here you need to install the trivy in the pod and it be better in a persistence storage. 
 ToDo List:
 1.	Persistence volume implementation needed.
 2.	Once trivy DB updated, it needs to rescan all the images. 
