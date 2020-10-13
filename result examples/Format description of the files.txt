@@ -1,13 +1,14 @@
 This folder is uesed to show the result files and the medium files. 
 
-There are 3 kinds of the json file in this program, first is "images.json", this is used to save all the images name in each namespace. the structure of this file is like this:
+There are 3 kinds of the json file in this program:
+The first is "images.json", this is used to save all the images name in each namespace. the structure of this file is like this:
 [{'namespace',
 'status',
-'Images'[
+'Images'[{
     'Continer_IP',
     'Pod_name',
     'Image',   
-    'ImageId' ]},{...},{...}....] 
+    'ImageId'},{...}...]},{...}....] 
 
 The second type json file is used to save the origional trivy scan results, so the structure is determined by trivy. The name of the files are the name of the images with "_" replaced "\" and "-" replaced ":" 
 
